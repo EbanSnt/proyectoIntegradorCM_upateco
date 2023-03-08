@@ -15,18 +15,16 @@ class BaseDatos:
         DESCRIPCION TEXT,
         ETIQUETAS TEXT,
         RECORDATORIO TEXT,
-        DIA INTEGER,
-        MES INTEGER,
-        YEAR INTEGER,
+        CREACION TEXT,
         CODIGO INTEGER)""")
         self.conexion.commit()
         self.conexion.close()
 
-    def insertar_datos(self, titulo,fecha,hora,duracion,importancia,descripcion,etiquetas,recordatorio,dia,mes,year,codigo):
+    def insertar_datos(self, titulo,fecha,hora,duracion,importancia,descripcion,etiquetas,recordatorio,creacion,codigo):
         self.conexion = sqlite3.connect("agenda.db")
         self.cursor = self.conexion.cursor()
         self.cursor.execute(f"INSERT INTO AGENDA VALUES (NULL,'{titulo}','{fecha}','{hora}',{duracion},'{importancia}'"
-                            f",'{descripcion}','{etiquetas}','{recordatorio}',{dia},{mes},{year},{codigo})")
+                            f",'{descripcion}','{etiquetas}','{recordatorio}','{creacion}',{codigo})")
         self.conexion.commit()
         self.conexion.close()
 

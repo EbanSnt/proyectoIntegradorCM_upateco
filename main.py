@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import ttk
-from ventana_principal import VentanaPrincipal
+from tkinter import *
+from ventana_principal import *
 class VentanaInicio(ttk.Frame):
     """Primera ventana que verá el usuario cuando inicie el programa"""
     def __init__(self,parent):
